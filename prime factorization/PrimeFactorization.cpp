@@ -9,7 +9,7 @@ int main()
 
 	cout << "소인수분해할 수를 입력 : ";
 	cin >> N;
-	int check = N;
+	
 
 	queue<int> PF;
 	for(int i = 2; i <= N/i; i++)
@@ -20,11 +20,12 @@ int main()
 			N /= i;
 		}
 	}
-	if(N!=check)
-	    PF.push(N);
+	PF.push(N);
 	
 	int data = 1;
+	int check = 0;
 	cout << "소인수 : ";
+
 	while(!PF.empty())
 	{
 		data = PF.front();
